@@ -1,0 +1,17 @@
+fastapi[standard]
+sqlalchemy[asyncio]
+asyncpg
+alembic
+pydantic-settings
+python-dotenv
+httpx
+uvicorn[standard]
+python-multipart
+aiofiles
+numpy
+Pillow
+transformers
+webrtcvad-wheels
+soundfile
+pytest
+pytest-asyncio
