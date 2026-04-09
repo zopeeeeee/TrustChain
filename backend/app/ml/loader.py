@@ -40,11 +40,19 @@ def load_models() -> dict:
         p.requires_grad = False
     logger.info("Wav2Vec2 model loaded")
 
-    # Fusion MLP (untrained -- random weights for prototype)
-    logger.info("Loading Fusion MLP...")
+    import os
+    
+    # Fusion MLP (conditionally load trained weights if available)
     fusion_model = FusionMLP()
+    weights_path = os.path.join(os.path.dirname(__file__), "training", "fusion_weights.pth")
+    if os.path.exists(weights_path):
+        logger.info(f"Loading trained Fusion MLP weights from {weights_path}...")
+        fusion_model.load_state_dict(torch.load(weights_path, map_location="cpu", weights_only=True))
+        logger.info("Trained Fusion MLP loaded successfully.")
+    else:
+        logger.info("Loading untrained random weights for Fusion MLP (prototype mode)...")
+        
     fusion_model.eval()
-    logger.info("Fusion MLP loaded")
 
     logger.info("All ML models loaded successfully")
     return {

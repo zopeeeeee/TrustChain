@@ -1,0 +1,73 @@
+{
+  "milestones": [],
+  "phases": [
+    {
+      "number": "1",
+      "name": "Foundation and Infrastructure",
+      "goal": "A running FastAPI application with PostgreSQL database, health endpoint, model preloading, and Docker Compose orchestration -- the skeleton that every subsequent phase builds on",
+      "depends_on": "Nothing (first phase)",
+      "plan_count": 3,
+      "summary_count": 3,
+      "has_context": true,
+      "has_research": true,
+      "disk_status": "complete",
+      "roadmap_complete": true
+    },
+    {
+      "number": "2",
+      "name": "Upload and Preprocessing",
+      "goal": "Users can upload video files and the system extracts frames and audio tracks ready for ML analysis, with proper validation and error handling for edge cases",
+      "depends_on": "Phase 1",
+      "plan_count": 3,
+      "summary_count": 3,
+      "has_context": true,
+      "has_research": true,
+      "disk_status": "complete",
+      "roadmap_complete": false
+    },
+    {
+      "number": "3",
+      "name": "Detection Pipeline",
+      "goal": "The system analyzes uploaded videos using dual-stream ML (visual + audio) and returns a REAL/FAKE verdict with confidence score and modality breakdown",
+      "depends_on": "Phase 2",
+      "plan_count": 2,
+      "summary_count": 2,
+      "has_context": false,
+      "has_research": true,
+      "disk_status": "complete",
+      "roadmap_complete": true
+    },
+    {
+      "number": "4",
+      "name": "Results UI and Frontend Integration",
+      "goal": "Users see complete analysis results, browse their analysis history, and export verification reports -- the detection-facing user experience",
+      "depends_on": "Phase 3",
+      "plan_count": 2,
+      "summary_count": 2,
+      "has_context": true,
+      "has_research": true,
+      "disk_status": "complete",
+      "roadmap_complete": true
+    },
+    {
+      "number": "5",
+      "name": "Blockchain Layer",
+      "goal": "Authenticated media can be registered on-chain via a Solidity smart contract deployed to Sepolia, with transaction records stored locally and verifiable on Etherscan, and the frontend provides full blockchain registration and status UI",
+      "depends_on": "Phase 1, Phase 4",
+      "plan_count": 0,
+      "summary_count": 0,
+      "has_context": false,
+      "has_research": false,
+      "disk_status": "no_directory",
+      "roadmap_complete": false
+    }
+  ],
+  "phase_count": 5,
+  "completed_phases": 4,
+  "total_plans": 10,
+  "total_summaries": 10,
+  "progress_percent": 100,
+  "current_phase": null,
+  "next_phase": "5",
+  "missing_phase_details": null
+}
